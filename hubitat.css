@@ -1,4 +1,16 @@
-/* ========== Hubitat Dark Theme (Safe Injection) ========== */
+/* Force content container active */
+main {
+  display: block !important;
+}
+
+.mdl-layout__content {
+  opacity: 1 !important;
+}
+
+/* Ensure the app root shows up */
+#app {
+  display: block !important;
+}
 
 /* Scope everything under the app wrapper */
 #app, .mdl-layout, .mdl-layout__content, body {
