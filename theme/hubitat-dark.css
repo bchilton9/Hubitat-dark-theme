@@ -1,40 +1,78 @@
-/* hubitat-dark.css */
+/* Force body and base containers dark */
 body, html {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-a, .text-blue-600 {
-  color: #80d0ff !important;
-}
-
-.main-page-v2-wrapper,
-.device-tile-overrides,
-.header-container,
-.stats-container,
-.surface-ground,
-.p-toast {
+table, .table, .list-group-item, .form-control, .card, .panel, .modal-content {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
 }
 
-.ui-bg-white {
+/* Input fields */
+input, select, textarea {
   background-color: #2a2a2a !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
 }
 
-.border-300 {
-  border-color: #444 !important;
-}
-
-.hover\:bg-hubitat-neutral-15:hover {
+/* Buttons */
+.btn, .btn-default, .btn-primary, .btn-danger, .btn-success {
   background-color: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
 }
 
-.bg-hubitat-light-gray-1 {
-  background-color: #1e1e1e !important;
+.btn-primary {
+  background-color: #2962ff !important;
+  border-color: #2962ff !important;
 }
 
-.p-toast {
-  background: #222 !important;
+/* Links */
+a, a:visited {
+  color: #64b5f6 !important;
+}
+
+a:hover {
+  color: #90caf9 !important;
+}
+
+/* Dropdowns, search, filters */
+.dropdown-menu, .form-control, select {
+  background-color: #2b2b2b !important;
+  color: #f1f1f1 !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Sliders / Switches */
+input[type="range"] {
+  background-color: #444 !important;
+}
+
+.switch, .toggle, .slider {
+  background-color: #444 !important;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Toasts, notifications, alerts */
+.alert {
+  background-color: #222 !important;
+  color: #ddd !important;
+  border-color: #444 !important;
 }
