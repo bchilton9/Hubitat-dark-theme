@@ -1,11 +1,75 @@
-body {
+/* ========== Hubitat Dark Theme (Safe Injection) ========== */
+
+/* Scope everything under the app wrapper */
+#app, .mdl-layout, .mdl-layout__content, body {
   background-color: #121212 !important;
   color: #eee !important;
 }
 
-.mdc-card,
-.p-card,
-.p-panel {
+/* Make main layout visible again */
+.mdl-layout__content {
+  opacity: 1 !important;
+}
+
+/* Avoid breaking Vue loading */
+main {
+  display: block !important;
+}
+
+/* Buttons & inputs */
+.mdl-button,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
   background-color: #1e1e1e !important;
   color: #eee !important;
+  border-color: #333 !important;
+}
+
+/* Cards and panels */
+.mdl-card,
+.ui-widget-content,
+.mdc-card {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+  box-shadow: none !important;
+}
+
+/* Headers and nav */
+.mdl-layout__header,
+.mdc-top-app-bar {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+/* Side nav */
+.mdl-navigation__link,
+.sidebar-nav {
+  background-color: #1b1b1b !important;
+  color: #ccc !important;
+}
+
+/* Tables */
+table {
+  background-color: #1e1e1e !important;
+  color: #ddd !important;
+}
+th, td {
+  border-color: #333 !important;
+}
+
+/* Fix loading overlays */
+.mdl-spinner,
+.spinner,
+.loading-spinner {
+  border-top-color: #ccc !important;
+  border-left-color: #ccc !important;
+}
+
+/* Prevent white flash */
+body, html {
+  background-color: #121212 !important;
 }
