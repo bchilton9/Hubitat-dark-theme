@@ -56,7 +56,7 @@
     console.log('[Theme] Dark theme applied.');
   }
 
-  // Safely wrap Eruda init if it's present
+  // Optional: safely initialize Eruda if it's injected
   try {
     if (typeof eruda !== 'undefined' && typeof eruda.init === 'function') {
       eruda.init();
@@ -67,4 +67,19 @@
   }
 
   applyTheme();
+
+  // Attempt to hide loading spinner after timeout
+  setTimeout(() => {
+    const candidates = [...document.querySelectorAll('div')]
+      .filter(el =>
+        el.offsetHeight > 100 &&
+        el.innerText.trim() === '' &&
+        getComputedStyle(el).display !== 'none'
+      );
+
+    if (candidates.length) {
+      candidates.forEach(el => el.style.display = 'none');
+      console.log('[Theme] Spinner force-hidden.');
+    }
+  }, 4000);
 })();
