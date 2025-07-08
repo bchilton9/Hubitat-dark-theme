@@ -1,61 +1,74 @@
-(function() {
-  const css = `
-    html, body {
-      background-color: #111 !important;
-      color: #eee !important;
+(function () {
+  const DARK_STYLES = `
+    body, html {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+
+    a, .text-blue-600 {
+      color: #80d0ff !important;
     }
 
     .main-page-v2-wrapper,
     .device-tile-overrides,
-    .ui-bg-white,
-    .bg-hubitat-light-gray-1,
-    .bg-hubitat-neutral-10 {
-      background-color: #1a1a1a !important;
-      color: #eee !important;
+    .header-container,
+    .stats-container,
+    .surface-ground,
+    .p-toast {
+      background-color: #1e1e1e !important;
+      color: #e0e0e0 !important;
+      border-color: #333 !important;
+    }
+
+    .ui-bg-white {
+      background-color: #2a2a2a !important;
     }
 
     .border-300 {
       border-color: #444 !important;
     }
 
-    .text-blue-600 {
-      color: #66ccff !important;
-    }
-
     .hover\\:bg-hubitat-neutral-15:hover {
-      background-color: #2a2a2a !important;
+      background-color: #333 !important;
     }
 
-    a {
-      color: #76c2ff !important;
+    .bg-hubitat-light-gray-1 {
+      background-color: #1e1e1e !important;
     }
 
-    /* Spinner override */
-    .v-overlay,
-    .loading-spinner,
-    [class*="spinner"],
-    [class*="loader"] {
-      display: none !important;
+    .text-blue-600 {
+      color: #4fc3f7 !important;
+    }
+
+    .p-toast {
+      background: #222 !important;
     }
   `;
 
-  function injectCSS() {
-    const style = document.createElement("style");
-    style.textContent = css;
+  function applyTheme() {
+    if (document.getElementById('dark-theme-style')) return;
+    const style = document.createElement('style');
+    style.id = 'dark-theme-style';
+    style.textContent = DARK_STYLES;
     document.head.appendChild(style);
-    console.log("[Theme] Dark theme injected.");
+    console.log('[Theme] Dark theme applied.');
   }
 
-  function waitForVueRender() {
-    const target = document.querySelector(".main-page-v2-wrapper");
-    if (target) {
-      injectCSS();
-      return;
+  function waitForSpinnerAndInject() {
+    const spinnerSelector = 'div.w-full.h-full.flex.flex-column.justify-content-center.align-items-center';
+    const spinner = document.querySelector(spinnerSelector);
+
+    if (!spinner || spinner.offsetParent === null) {
+      applyTheme();
+    } else {
+      setTimeout(waitForSpinnerAndInject, 300);
     }
-
-    // Wait and try again until Vue renders the content
-    setTimeout(waitForVueRender, 300);
   }
 
-  waitForVueRender();
+  // Ensure DOM is ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    waitForSpinnerAndInject();
+  } else {
+    document.addEventListener('DOMContentLoaded', waitForSpinnerAndInject);
+  }
 })();
