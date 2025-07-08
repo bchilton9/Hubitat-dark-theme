@@ -154,3 +154,36 @@ svg, .p-icon, i, .material-icons {
   color: inherit !important;
   z-index: auto !important;
 }
+
+/* ===== Navbar / Breadcrumb / Banner ===== */
+nav.p-breadcrumb, .breadcrumb-container, .p-breadcrumb, .breadcrumb {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-bottom: 1px solid #333 !important;
+}
+nav.p-breadcrumb .p-breadcrumb-item,
+.breadcrumb-container .breadcrumb-item {
+  color: #e0e0e0 !important;
+}
+
+/* ===== Top Panel with Status Pills ===== */
+.header-wrapper, .main-header, .toolbar, .top-bar, .home-status-container {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+.home-status-container .pill {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333 !important;
+}
+
+/* ===== Search Box Container ===== */
+.search-container, .search-box-wrapper, .device-search, .app-search {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+}
+.search-container input,
+.search-box-wrapper input {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
