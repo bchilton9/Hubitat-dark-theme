@@ -1,155 +1,200 @@
-/* ===== Base Dark Theme ===== */
+/* ===== Global Base ===== */
 body, html {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
-a, .text-blue-600, .p-menuitem-text {
-  color: #6ab0ff !important;
+a, .text-blue-600, .text-primary {
+  color: #4fc3f7 !important;
 }
-a:hover {
-  color: #8ecaff !important;
-}
-button, .p-button {
-  background-color: #2a2a2a !important;
+.text-black, .text-gray-900, .text-gray-700, .text-hubitat-neutral-60 {
   color: #e0e0e0 !important;
-  border-color: #444 !important;
 }
-button:hover, .p-button:hover {
-  background-color: #3a3a3a !important;
-}
-input, select, textarea {
+.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1, .bg-hubitat-neutral-10,
+.ui-bg-white, .surface-ground, .hover\:bg-hubitat-neutral-15:hover,
+.main-page-v2-wrapper {
   background-color: #1e1e1e !important;
-  color: #ffffff !important;
-  border: 1px solid #333 !important;
-}
-table, .p-datatable, .p-datatable-tbody {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-}
-thead, .p-datatable-thead {
-  background-color: #181818 !important;
-}
-.p-card, .p-panel {
-  background-color: #1e1e1e !important;
-  color: #ffffff !important;
-}
-.p-dropdown-panel {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
-}
-.p-dialog {
-  background-color: #1c1c1c !important;
-  color: #ffffff !important;
-}
-.p-sidebar {
-  background-color: #151515 !important;
-  color: #ffffff !important;
-}
-.p-toast {
-  background-color: #202020 !important;
-  color: #ffffff !important;
-}
-.p-menu {
-  background-color: #1e1e1e !important;
-  color: #ffffff !important;
-}
-.p-menuitem-link {
-  color: #cccccc !important;
-}
-.p-menuitem-link:hover {
-  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
 }
 
-/* ===== Fix: Panel Headers (e.g. "Get Started") ===== */
+/* ===== Scrollbars ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+/* ===== Panels, Cards, Containers ===== */
+.header-container,
+.device-tile-overrides,
+.stats-container,
+.grid,
+.device-grid-container,
+.p-panel,
+.p-card,
+.p-dropdown-panel,
+.p-tabview-panels,
+.p-dialog-content,
+.p-toast,
+.p-inputtext,
+.p-dropdown,
+.p-button,
+.p-panel-content,
+.flex.flex-row.gap-2.border-round-lg.stats-container {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* ===== Panel Header Fix ===== */
 .p-panel-header {
-  background-color: #121212 !important;
-  color: #eeeeee !important;
-  border-bottom: 1px solid #2a2a2a !important;
-}
-.p-panel-title {
-  color: #eeeeee !important;
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
 }
 
-/* ===== Fix: Breadcrumb Navigation ===== */
-.p-breadcrumb {
-  background-color: #121212 !important;
-}
+/* ===== Breadcrumbs ===== */
+.p-breadcrumb,
+.p-breadcrumb-list,
+.p-breadcrumb a,
 .p-breadcrumb .p-menuitem-text {
-  color: #bbbbbb !important;
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
 }
 .p-breadcrumb .p-menuitem-link {
-  color: #bbbbbb !important;
+  background-color: transparent !important;
 }
 
-/* ===== Fix: Stats Row (e.g. Lights, HSM, etc) ===== */
-.stats-container {
-  background-color: #222 !important;
+/* ===== Tables ===== */
+table, thead, tbody, tr, th, td {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* ===== Buttons ===== */
+.p-button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.p-dialog-footer button,
+button[data-mode-switch],
+button[data-layout] {
+  background-color: #333 !important;
   color: #fff !important;
-  border: 1px solid #333 !important;
+  border: 1px solid #555 !important;
 }
-.stats-container:hover {
-  background-color: #2a2a2a !important;
-}
-.stats-container div {
-  color: #ddd !important;
-}
-.stats-container img {
-  filter: brightness(0.8) !important;
-}
-
-/* ===== Fix: Dashboard Button Row (List / Clone / Trash) ===== */
-.p-panel-content {
-  background-color: #181818 !important;
-  color: #fff !important;
-}
-.p-panel-content .p-button.p-button-icon-only {
-  background-color: #2b2b2b !important;
-  color: #eaeaea !important;
-  border: 1px solid #444 !important;
-}
-.p-panel-content .p-button.p-button-icon-only:hover {
-  background-color: #3b3b3b !important;
-}
-
-/* ===== Fix: Trash (Danger) Buttons ===== */
-.p-button-danger {
-  background-color: #a00 !important;
-  color: #fff !important;
-  border-color: #800 !important;
-}
-.p-button-danger:hover {
-  background-color: #c00 !important;
-}
-
-/* ===== Fix: Ripple / Ink Effects ===== */
-.p-ink {
-  background-color: rgba(255,255,255,0.1) !important;
-}
-
-/* ===== Fix: Switch / Toggle Backgrounds ===== */
-.p-inputswitch, .p-inputswitch-slider {
+.p-button:hover,
+.btn:hover {
   background-color: #444 !important;
 }
-.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
-  background-color: #4caf50 !important;
+
+/* ===== Icon-Only Buttons ===== */
+.p-button-icon-only {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #555 !important;
 }
 
-/* ===== Fix: Tooltip Text (Light by default) ===== */
-.p-tooltip, .p-tooltip .p-tooltip-text {
-  background-color: #222 !important;
-  color: #ddd !important;
+/* ===== Inputs & Forms ===== */
+input, select, textarea, .p-inputtext, .form-control {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999 !important;
+}
+input[type="search"] {
+  color: #e0e0e0 !important;
 }
 
-/* ===== Fix: Top-right Icons and Settings Bell ===== */
-button[aria-label="Settings"], .pi-bell {
+/* ===== TabView ===== */
+.p-tabview-nav li {
+  background-color: #1c1c1c !important;
   color: #ccc !important;
 }
-
-/* ===== Optional: Force icon buttons in sidebars to match dark theme ===== */
-.p-button-icon-only {
-  background-color: #222 !important;
-  color: #ddd !important;
-}
-.p-button-icon-only:hover {
+.p-tabview-nav li.p-highlight {
   background-color: #333 !important;
+  border-bottom: 2px solid #4fc3f7 !important;
+}
+
+/* ===== Dialogs ===== */
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer {
+  background-color: #1a1a1a !important;
+  color: #ddd !important;
+  border-color: #333 !important;
+}
+
+/* ===== Toasts & Notifications ===== */
+.p-toast,
+.alert,
+.notification {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+  border-top: none !important;
+  border-color: #333 !important;
+}
+
+/* ===== Utility Color Classes ===== */
+.text-orange-600,
+.text-yellow-600 {
+  color: #fbc02d !important;
+}
+.text-green-600 {
+  color: #81c784 !important;
+}
+.text-red-600 {
+  color: #e57373 !important;
+}
+
+/* ===== Remove Accidental Light Backgrounds ===== */
+[style*="background-color: white"],
+[style*="background:#fff"],
+[style*="background: white"] {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== Toast Shadow Line Fix ===== */
+.p-toast {
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== Ripple Fix ===== */
+.p-ink {
+  background-color: #888 !important;
+}
+
+/* ===== Editor Toolbar & Content ===== */
+.p-editor-toolbar,
+.ql-toolbar,
+.ql-editor {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* ===== Misc Utility Fixes ===== */
+.text-hubitat-neutral-60 {
+  color: #e0e0e0 !important;
+}
+.ui-bg-white {
+  background-color: #1e1e1e !important;
+}
+button.p-button-danger {
+  background-color: #a32c2c !important;
+  border-color: #922 !important;
+}
+
+/* ===== Optional Additional Fixes ===== */
+svg[data-bg="true"] {
+  fill: #333 !important;
 }
