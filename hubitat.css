@@ -1,60 +1,93 @@
-:root {
-  --bg: #1e1e1e;
-  --panel: #2b2b2b;
-  --text: #e0e0e0;
-  --accent: #00ffc3;
-  --input-bg: #333;
-  --input-border: #555;
+/* === Scoped Dark Theme for Hubitat UI2 === */
+/* Only applies if the root theme is dark */
+body[class*="dark"],
+body[class*="mdc-dark"] {
+  --surface-a: #1a1a1a;
+  --surface-b: #222;
+  --text-color: #e0e0e0;
+  --text-secondary-color: #999;
+  --primary-color: #4dd0e1;
+  --border-color: #333;
+  --card-bg: #2a2a2a;
 }
 
-/* Safe sidebar + menu theming */
-.sidebar, .menu, .nav, .drawer {
-  background-color: var(--panel) !important;
-  color: var(--text) !important;
+/* General background + font fix */
+body[class*="dark"],
+body[class*="mdc-dark"] {
+  background-color: var(--surface-a) !important;
+  color: var(--text-color) !important;
 }
 
-/* Dashboard cards, tiles, device panels */
-.tile, .hub-card, .dashboard-card, .device-card, .panel {
-  background-color: var(--panel) !important;
-  color: var(--text) !important;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+/* Card containers */
+.mdc-card,
+.p-card,
+.p-panel,
+.p-dialog,
+.p-toast,
+.p-datatable,
+.p-dropdown,
+.p-inputtext,
+.p-selectbutton,
+.p-tabview,
+.p-menu,
+.p-sidebar,
+.p-toast {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
 }
 
-/* Buttons and inputs */
-button, input, select, textarea {
-  background-color: var(--input-bg) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--input-border) !important;
-  border-radius: 4px;
+/* Table rows and data */
+.p-datatable td,
+.p-datatable th {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
 }
 
-button:hover {
-  background-color: var(--accent) !important;
+/* Inputs and dropdowns */
+input,
+textarea,
+select,
+.p-inputtext {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Buttons */
+button,
+.p-button {
+  background-color: var(--primary-color) !important;
   color: #000 !important;
-  cursor: pointer;
+  border: none !important;
 }
 
-/* Link styling */
-a {
-  color: var(--accent) !important;
+/* Hover/active effects */
+.p-button:hover,
+button:hover {
+  filter: brightness(1.1);
 }
 
-/* Header/footer bar */
-.header, .footer, .toolbar, .navbar {
-  background-color: #111 !important;
-  color: var(--text) !important;
-  border-bottom: 1px solid #444;
+/* Switches, toggles, checkboxes */
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: var(--primary-color) !important;
 }
 
-/* Optional: scrollbars */
-::-webkit-scrollbar {
+/* Text elements */
+label,
+span,
+p,
+div,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color) !important;
+}
+
+/* Scrollbars */
+body[class*="dark"] ::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
+body[class*="dark"] ::-webkit-scrollbar-thumb {
+  background: #555;
   border-radius: 4px;
 }
