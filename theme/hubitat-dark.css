@@ -1,311 +1,155 @@
-/* ===== Global Base ===== */
+/* ===== Base Dark Theme ===== */
 body, html {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
-a, .text-blue-600, .text-primary {
-  color: #4fc3f7 !important;
+a, .text-blue-600, .p-menuitem-text {
+  color: #6ab0ff !important;
 }
-.text-black, .text-gray-900, .text-gray-700 {
-  color: #e0e0e0 !important;
+a:hover {
+  color: #8ecaff !important;
 }
-.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1, .bg-hubitat-neutral-10,
-.ui-bg-white, .surface-ground, .hover\:bg-hubitat-neutral-15:hover,
-.main-page-v2-wrapper {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Scrollbars ===== */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 10px;
-}
-
-/* ===== Panels, Cards, Containers ===== */
-.header-container,
-.device-tile-overrides,
-.stats-container,
-.grid,
-.device-grid-container,
-.p-panel,
-.p-card,
-.p-dropdown-panel,
-.p-tabview-panels,
-.p-dialog-content,
-.p-toast,
-.p-inputtext,
-.p-dropdown,
-.p-button,
-.card,
-.dashboard-card,
-.bg-white.shadow.rounded-md,
-.card-header,
-.card-body,
-.card-footer,
-div:has(> h1),
-[data-v-1e7bc439=""].flex.flex-row.gap-2.flex-wrap,
-.flex.flex-col.gap-2,
-.bg-white.rounded-md.shadow {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* ===== Tables ===== */
-table, thead, tbody, tr, th, td {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-thead, .table thead th {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Buttons ===== */
-.btn, .btn-primary, .btn-secondary,
-.p-button, .p-dialog-footer button {
-  background-color: #333 !important;
-  color: #fff !important;
-  border: 1px solid #555 !important;
-}
-.btn:hover, .p-button:hover {
-  background-color: #444 !important;
-}
-
-/* ===== Input Controls ===== */
-.p-inputtext, .form-control, input, select, textarea {
+button, .p-button {
   background-color: #2a2a2a !important;
   color: #e0e0e0 !important;
-  border-color: #555 !important;
+  border-color: #444 !important;
 }
-input[type="search"],
-input::placeholder {
-  color: #e0e0e0 !important;
-}
-input::placeholder {
-  color: #999 !important;
-}
-
-/* ===== TabView ===== */
-.p-tabview-nav li {
-  background-color: #1c1c1c !important;
-  color: #ccc !important;
-}
-.p-tabview-nav li.p-highlight {
-  background-color: #333 !important;
-  border-bottom: 2px solid #4fc3f7 !important;
-}
-.p-tabview-nav-container,
-.p-tabview-nav {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* ===== Dialogs ===== */
-.p-dialog .p-dialog-header,
-.p-dialog .p-dialog-content,
-.p-dialog .p-dialog-footer {
-  background-color: #1a1a1a !important;
-  color: #ddd !important;
-  border-color: #333 !important;
-}
-
-/* ===== Toasts & Notifications ===== */
-.p-toast, .alert, .notification {
-  background-color: #1e1e1e !important;
-  border-color: #333 !important;
-  color: #fff !important;
-}
-.p-toast {
-  border-top: none !important;
-}
-
-/* ===== Utility Color Classes ===== */
-.text-orange-600, .text-yellow-600 {
-  color: #fbc02d !important;
-}
-.text-green-600 {
-  color: #81c784 !important;
-}
-.text-red-600 {
-  color: #e57373 !important;
-}
-
-/* ===== List/Grid Button Fixes ===== */
-span.flex-1,
-button[data-mode-switch],
-button[data-layout],
-button[aria-label="List"],
-button[aria-label="Grid"] {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-
-/* ===== Remove Accidental Dark Overlays ===== */
-.flex.justify-content-center.align-items-center {
-  background: transparent !important;
-  color: inherit !important;
-  z-index: auto !important;
-}
-
-/* ===== Fix Hidden Elements Being Black ===== */
-[style*="background-color: white"],
-[style*="background:#fff"],
-[style*="background: white"] {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Dropdown Panel Fix ===== */
-.p-dropdown-panel {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-.p-highlight {
-  background-color: #333 !important;
-  color: #4fc3f7 !important;
-}
-
-/* ===== Apps & Dashboards Tables ===== */
-.p-table,
-.p-table thead th,
-.p-table tbody tr,
-.p-table tbody td,
-.p-table tbody th {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* ===== Apps Add‑buttons & Top Bar ===== */
-button.bg-green-500,
-button.bg-green-600 {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-button.bg-green-500:hover,
-button.bg-green-600:hover {
-  background-color: #444 !important;
-}
-
-/* ===== Breadcrumb & Header Tabs ===== */
-.breadcrumb,
-.breadcrumb a,
-.page-title,
-.p-panel .p-tabview-nav li,
-.p-panel .p-tabview-nav li span {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Side‑menu Background ===== */
-.sidebar, .layout-sidebar, .p-sidebar {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-.sidebar a, .layout-sidebar a, .p-sidebar a,
-.sidebar .menu-item, .p-sidebar .menu-item,
-.layout-sidebar .menu-item {
-  color: #e0e0e0 !important;
-}
-
-/* ===== Side‑menu Active Item ===== */
-.sidebar .menu-item-active,
-.p-sidebar .menu-item-active,
-.layout-sidebar .menu-item-active {
-  background-color: #333 !important;
-  color: #4fc3f7 !important;
-}
-
-/* ===== Overlay/backdrop dark fix ===== */
-.p-sidebar-mask,
-.p-dialog-mask {
-  background-color: rgba(18, 18, 18, 0.8) !important;
-}
-
-/* ===== List/Grid toggle fix (specific icons) ===== */
-button[aria-label="List"] > span,
-button[aria-label="Grid"] > span {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Icon/text inputs in top bar ===== */
-input[placeholder="Search apps…"],
-input[placeholder="Search…"] {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-
-/* ===== Panel Header (e.g., "Get Started") ===== */
-.p-panel-header,
-.p-panel-header .p-panel-title {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* ===== Breadcrumb Nav Bar ===== */
-.p-breadcrumb,
-.p-breadcrumb .p-menuitem-link,
-.p-breadcrumb .p-menuitem-text {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-.p-breadcrumb .p-menuitem-text {
-  color: #cccccc !important;
-}
-
-/* ===== Status Tile Buttons (e.g., "Lights: 16 on") ===== */
-.stats-container {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
-  border: 1px solid #444 !important;
-}
-.stats-container:hover {
-  background-color: #333 !important;
-}
-.stats-container .text-blue-600 {
-  color: #4fc3f7 !important;
-}
-
-/* ===== Panel Content Button Rows ===== */
-.p-panel-content,
-.p-panel-content .flex {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== Icon Buttons (List / Clone / Trash etc.) ===== */
-.p-button.p-button-icon-only {
-  background-color: #2a2a2a !important;
-  border: 1px solid #444 !important;
-  color: #e0e0e0 !important;
-}
-.p-button.p-button-icon-only:hover {
+button:hover, .p-button:hover {
   background-color: #3a3a3a !important;
 }
-.p-button.p-button-danger {
-  background-color: #922 !important;
-  color: #fff !important;
+input, select, textarea {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
 }
-.p-button.p-button-danger:hover {
-  background-color: #b33 !important;
+table, .p-datatable, .p-datatable-tbody {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+thead, .p-datatable-thead {
+  background-color: #181818 !important;
+}
+.p-card, .p-panel {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+.p-dropdown-panel {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+.p-dialog {
+  background-color: #1c1c1c !important;
+  color: #ffffff !important;
+}
+.p-sidebar {
+  background-color: #151515 !important;
+  color: #ffffff !important;
+}
+.p-toast {
+  background-color: #202020 !important;
+  color: #ffffff !important;
+}
+.p-menu {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+.p-menuitem-link {
+  color: #cccccc !important;
+}
+.p-menuitem-link:hover {
+  background-color: #2a2a2a !important;
 }
 
-/* ===== Override ripple/ink effect color if visible ===== */
+/* ===== Fix: Panel Headers (e.g. "Get Started") ===== */
+.p-panel-header {
+  background-color: #121212 !important;
+  color: #eeeeee !important;
+  border-bottom: 1px solid #2a2a2a !important;
+}
+.p-panel-title {
+  color: #eeeeee !important;
+}
+
+/* ===== Fix: Breadcrumb Navigation ===== */
+.p-breadcrumb {
+  background-color: #121212 !important;
+}
+.p-breadcrumb .p-menuitem-text {
+  color: #bbbbbb !important;
+}
+.p-breadcrumb .p-menuitem-link {
+  color: #bbbbbb !important;
+}
+
+/* ===== Fix: Stats Row (e.g. Lights, HSM, etc) ===== */
+.stats-container {
+  background-color: #222 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+}
+.stats-container:hover {
+  background-color: #2a2a2a !important;
+}
+.stats-container div {
+  color: #ddd !important;
+}
+.stats-container img {
+  filter: brightness(0.8) !important;
+}
+
+/* ===== Fix: Dashboard Button Row (List / Clone / Trash) ===== */
+.p-panel-content {
+  background-color: #181818 !important;
+  color: #fff !important;
+}
+.p-panel-content .p-button.p-button-icon-only {
+  background-color: #2b2b2b !important;
+  color: #eaeaea !important;
+  border: 1px solid #444 !important;
+}
+.p-panel-content .p-button.p-button-icon-only:hover {
+  background-color: #3b3b3b !important;
+}
+
+/* ===== Fix: Trash (Danger) Buttons ===== */
+.p-button-danger {
+  background-color: #a00 !important;
+  color: #fff !important;
+  border-color: #800 !important;
+}
+.p-button-danger:hover {
+  background-color: #c00 !important;
+}
+
+/* ===== Fix: Ripple / Ink Effects ===== */
 .p-ink {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* ===== Fix: Switch / Toggle Backgrounds ===== */
+.p-inputswitch, .p-inputswitch-slider {
+  background-color: #444 !important;
+}
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background-color: #4caf50 !important;
+}
+
+/* ===== Fix: Tooltip Text (Light by default) ===== */
+.p-tooltip, .p-tooltip .p-tooltip-text {
+  background-color: #222 !important;
+  color: #ddd !important;
+}
+
+/* ===== Fix: Top-right Icons and Settings Bell ===== */
+button[aria-label="Settings"], .pi-bell {
+  color: #ccc !important;
+}
+
+/* ===== Optional: Force icon buttons in sidebars to match dark theme ===== */
+.p-button-icon-only {
+  background-color: #222 !important;
+  color: #ddd !important;
+}
+.p-button-icon-only:hover {
+  background-color: #333 !important;
 }
