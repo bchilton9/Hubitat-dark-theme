@@ -1,95 +1,161 @@
-/* ===== Hubitat Dark Mode Patch ===== */
-
+/* === Hubitat Dark Theme: Base === */
 body, html {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-/* Generic div cleanup */
-div {
-  background-color: transparent !important;
-  color: #e0e0e0 !important;
+a, .text-blue-600, .text-primary {
+  color: #4fc3f7 !important;
 }
 
-/* Breadcrumb bar */
-nav.p-breadcrumb {
-  background-color: #1f1f1f !important;
-  color: #e0e0e0 !important;
-  border: none !important;
-}
-
-/* White cards and tiles */
-.p-card, .card, .p-panel, .p-dialog, .p-toast {
-  background-color: #1f1f1f !important;
+.main-page-v2-wrapper,
+.device-tile-overrides,
+.header-container,
+.stats-container,
+.surface-ground,
+.p-toast,
+.p-dialog,
+.p-panel,
+.p-dropdown,
+.p-inputtext,
+.p-button,
+.ui-bg-white,
+.bg-hubitat-light-gray-1,
+.bg-white,
+.bg-gray-100,
+.bg-hubitat-neutral-10,
+.hover\:bg-hubitat-neutral-15:hover {
+  background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
 }
 
-/* Form elements */
-input, textarea, select {
-  background-color: #2a2a2a !important;
-  color: #f0f0f0 !important;
-  border: 1px solid #444 !important;
+.text-black, .text-gray-900, .text-gray-700 {
+  color: #e0e0e0 !important;
 }
 
-/* Buttons */
-button, .p-button, .p-button-label {
+.border-300, .border-gray-300 {
+  border-color: #444 !important;
+}
+
+.p-button {
+  background-color: #333 !important;
+  border-color: #555 !important;
+  color: #fff !important;
+}
+
+.p-button:hover {
+  background-color: #555 !important;
+}
+
+.form-control, .p-inputtext {
   background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
+
+.p-dropdown-label {
+  color: #e0e0e0 !important;
+}
+
+.p-tabview-nav li {
+  background-color: #1c1c1c !important;
+  color: #ccc !important;
+}
+
+.p-tabview-nav li.p-highlight {
+  background-color: #333 !important;
+  border-bottom: 2px solid #4fc3f7 !important;
+}
+
+.p-tabview-panels {
+  background-color: #1a1a1a !important;
+}
+
+.p-toast {
+  background: #222 !important;
+  color: #eee !important;
+}
+
+.text-orange-600, .text-yellow-600 {
+  color: #fbc02d !important;
+}
+
+.text-green-600 {
+  color: #81c784 !important;
+}
+
+.text-red-600 {
+  color: #e57373 !important;
+}
+
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer {
+  background: #1a1a1a !important;
+  color: #ddd !important;
+  border-color: #333 !important;
+}
+
+table, thead, tbody, tr, th, td {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+.btn, .btn-primary, .btn-secondary {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+.btn:hover {
+  background-color: #444 !important;
+}
+
+.alert, .notification {
+  background-color: #222 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+}
+
+/* === Extra Fixes Based on Live Page Scan === */
+nav.p-breadcrumb.p-component.pl-0.-mx-2.border-none {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.card,
+.p-card,
+.bg-white,
+.bg-gray-50,
+.shadow-md,
+.shadow {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background-color: #1f1f1f !important;
   color: #e0e0e0 !important;
   border-color: #444 !important;
 }
 
-button:hover, .p-button:hover {
-  background-color: #3a3a3a !important;
-}
-
-/* Headers, navbars, and bars */
-header, .navbar, .topbar, .p-menubar, .p-toolbar {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
-/* Scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #444;
-  border-radius: 4px;
-}
-
-/* Shadow/light overlays and panels */
-.p-dialog-mask, .overlay, .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-/* Tooltip / help icons */
-.p-tooltip, .p-tooltip-text {
-  background-color: #2a2a2a !important;
-  color: #f0f0f0 !important;
-}
-
-/* Toggle/slider switches */
-.p-inputswitch, .p-inputswitch-slider {
-  background-color: #555 !important;
-}
-.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
-  background-color: #4caf50 !important;
-}
-
-/* Fix link color contrast */
-a, .p-link {
-  color: #4ea3ff !important;
-}
-
-/* Tables and lists */
-table, th, td, .p-datatable, .p-listbox {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* Icons & buttons in tiles */
-.p-button-icon, .pi {
-  filter: invert(80%);
+svg, .icon {
+  filter: brightness(0.8) !important;
 }
