@@ -1,34 +1,75 @@
-/* Force content container active */
+/* === Critical Vue Mounting Fixes === */
+#app,
+.mdl-layout__content,
 main {
   display: block !important;
-}
-
-.mdl-layout__content {
   opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Ensure the app root shows up */
-#app {
+[v-cloak] {
+  display: none !important;
+}
+
+body[style*="display: none"],
+#app[style*="display: none"] {
   display: block !important;
 }
 
-/* Scope everything under the app wrapper */
-#app, .mdl-layout, .mdl-layout__content, body {
+/* === Base Dark Theme Styles === */
+body, html,
+#app,
+.mdl-layout,
+.mdl-layout__content {
   background-color: #121212 !important;
   color: #eee !important;
+  font-family: system-ui, sans-serif;
 }
 
-/* Make main layout visible again */
-.mdl-layout__content {
-  opacity: 1 !important;
+/* Prevent white flash */
+html, body {
+  background-color: #121212 !important;
 }
 
-/* Avoid breaking Vue loading */
-main {
-  display: block !important;
+/* === Cards and Panels === */
+.mdl-card,
+.ui-widget-content,
+.mdc-card {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+  box-shadow: none !important;
 }
 
-/* Buttons & inputs */
+/* === Headers and Navigation === */
+.mdl-layout__header,
+.mdc-top-app-bar {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.mdc-top-app-bar__title,
+.mdl-layout__header-row {
+  color: #fff !important;
+}
+
+/* === Side Navigation === */
+.mdl-navigation__link,
+.sidebar-nav {
+  background-color: #1b1b1b !important;
+  color: #ccc !important;
+}
+
+/* === Tables === */
+table {
+  background-color: #1e1e1e !important;
+  color: #ddd !important;
+}
+
+th, td {
+  border-color: #333 !important;
+}
+
+/* === Inputs, Forms, Buttons === */
 .mdl-button,
 input[type="text"],
 input[type="number"],
@@ -41,39 +82,29 @@ select {
   border-color: #333 !important;
 }
 
-/* Cards and panels */
-.mdl-card,
-.ui-widget-content,
-.mdc-card {
+/* Fix PrimeVue dropdowns */
+.mdc-select,
+.p-dropdown,
+.ui-selectonemenu {
   background-color: #1e1e1e !important;
   color: #eee !important;
-  box-shadow: none !important;
 }
 
-/* Headers and nav */
-.mdl-layout__header,
-.mdc-top-app-bar {
-  background-color: #222 !important;
-  color: #fff !important;
+/* === Dialogs and Modals === */
+.mdl-dialog,
+.mdc-dialog__surface {
+  background-color: #1c1c1c !important;
+  color: #eee !important;
 }
 
-/* Side nav */
-.mdl-navigation__link,
-.sidebar-nav {
-  background-color: #1b1b1b !important;
-  color: #ccc !important;
-}
-
-/* Tables */
-table {
+/* === DataTables Fix === */
+.dataTables_wrapper input[type="search"],
+.dataTables_wrapper select {
   background-color: #1e1e1e !important;
-  color: #ddd !important;
-}
-th, td {
-  border-color: #333 !important;
+  color: #eee !important;
 }
 
-/* Fix loading overlays */
+/* === Spinner Fix === */
 .mdl-spinner,
 .spinner,
 .loading-spinner {
@@ -81,7 +112,14 @@ th, td {
   border-left-color: #ccc !important;
 }
 
-/* Prevent white flash */
-body, html {
-  background-color: #121212 !important;
+/* === Link Styling === */
+a {
+  color: #4da6ff !important;
+}
+
+/* === Optional: Button Hover === */
+button:hover,
+.mdl-button:hover {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
 }
