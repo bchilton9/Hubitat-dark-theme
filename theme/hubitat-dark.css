@@ -1,99 +1,52 @@
-/* Global background and text adjustments */
+/* ===== Hubitat Dark Mode Patch ===== */
+
 body, html {
-  background-color: #111 !important;
-  color: #eee !important;
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
 }
 
-/* Main container overrides */
-.main-content,
-.container,
-.card,
-.mat-card,
-.mat-drawer-container {
-  background-color: #1a1a1a !important;
-  color: #eee !important;
-  border-color: #444 !important;
+/* Generic div cleanup */
+div {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
 }
 
-/* Button styling */
-button,
-.mat-button,
-.mat-raised-button,
-.mat-flat-button {
+/* Breadcrumb bar */
+nav.p-breadcrumb {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0 !important;
+  border: none !important;
+}
+
+/* White cards and tiles */
+.p-card, .card, .p-panel, .p-dialog, .p-toast {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* Form elements */
+input, textarea, select {
   background-color: #2a2a2a !important;
   color: #f0f0f0 !important;
   border: 1px solid #444 !important;
 }
 
-button:hover,
-.mat-button:hover {
-  background-color: #333 !important;
-}
-
-/* Toggle switches, icons */
-.mat-slide-toggle-bar {
-  background-color: #444 !important;
-}
-.mat-slide-toggle-thumb {
-  background-color: #ccc !important;
-}
-
-/* Input fields */
-input,
-textarea,
-.mat-input-element,
-.mat-form-field-infix {
-  background-color: #222 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-
-/* Breadcrumbs, nav, and toolbar */
-.mat-toolbar,
-.breadcrumb,
-.breadcrumb-item,
-.mat-toolbar-row {
-  background-color: #1a1a1a !important;
-  color: #ddd !important;
-  border-bottom: 1px solid #333 !important;
-}
-
-/* Card and tile containers */
-.card, .mat-card, .tile, .device-tile {
-  background-color: #222 !important;
-  color: #fff !important;
-  box-shadow: none !important;
-}
-
-/* Action icons, toggle switches */
-.mat-icon,
-.icon-button,
-.fa,
-i.material-icons {
-  color: #ccc !important;
-}
-
-/* Table headers and cells */
-table, th, td {
-  background-color: #111 !important;
-  color: #eee !important;
+/* Buttons */
+button, .p-button, .p-button-label {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
   border-color: #444 !important;
 }
 
-/* Dropdowns and select menus */
-.mat-select-panel,
-select,
-option {
-  background-color: #222 !important;
-  color: #fff !important;
+button:hover, .p-button:hover {
+  background-color: #3a3a3a !important;
 }
 
-/* Highlighting selection or primary items */
-.mat-primary,
-.mat-focus-indicator,
-a,
-a:visited {
-  color: #4da6ff !important;
+/* Headers, navbars, and bars */
+header, .navbar, .topbar, .p-menubar, .p-toolbar {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
 }
 
 /* Scrollbars */
@@ -104,25 +57,39 @@ a:visited {
   background-color: #444;
   border-radius: 4px;
 }
-::-webkit-scrollbar-track {
-  background-color: #1a1a1a;
+
+/* Shadow/light overlays and panels */
+.p-dialog-mask, .overlay, .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Fix icons and visibility for moon toggle */
-.theme-toggle {
-  background: none !important;
-  border: none !important;
-  filter: brightness(1.2);
+/* Tooltip / help icons */
+.p-tooltip, .p-tooltip-text {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
 }
 
-.theme-toggle svg,
-.theme-toggle img {
-  filter: invert(100%);
+/* Toggle/slider switches */
+.p-inputswitch, .p-inputswitch-slider {
+  background-color: #555 !important;
+}
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background-color: #4caf50 !important;
 }
 
-/* Force all elements to use dark overrides */
-* {
-  background-color: transparent !important;
-  color: inherit !important;
-  box-shadow: none !important;
+/* Fix link color contrast */
+a, .p-link {
+  color: #4ea3ff !important;
+}
+
+/* Tables and lists */
+table, th, td, .p-datatable, .p-listbox {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* Icons & buttons in tiles */
+.p-button-icon, .pi {
+  filter: invert(80%);
 }
