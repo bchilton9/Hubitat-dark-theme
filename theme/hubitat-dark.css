@@ -1,48 +1,31 @@
-/* ===== Global Base ===== */
-body, html {
+/* ===== Base ===== */
+html, body {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
+
+/* ===== Links & Text Colors ===== */
 a, .text-blue-600, .text-primary {
   color: #4fc3f7 !important;
 }
-.text-black, .text-gray-900, .text-gray-700 {
+.text-black, .text-gray-900, .text-gray-700,
+.text-neutral-800, .text-neutral-900 {
   color: #e0e0e0 !important;
 }
+
+/* ===== Background Overrides ===== */
 .bg-white, .bg-gray-100, .bg-hubitat-light-gray-1, .bg-hubitat-neutral-10,
 .ui-bg-white, .surface-ground, .hover\:bg-hubitat-neutral-15:hover,
-.main-page-v2-wrapper {
+.main-page-v2-wrapper, .card, .p-card, .p-panel, .p-dialog,
+div[style*="background: white"], div[style*="background-color: white"],
+div[style*="background:#fff"], div[style*="background-color:#fff"] {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
-/* ===== Scrollbars ===== */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 10px;
-}
-
-/* ===== Panels, Cards, Containers ===== */
-.header-container,
-.device-tile-overrides,
-.stats-container,
-.grid,
-.device-grid-container,
-.p-panel,
-.p-card,
-.p-dropdown-panel,
-.p-tabview-panels,
-.p-dialog-content,
-.p-toast,
-.p-inputtext,
-.p-dropdown,
-.p-button {
+/* ===== Containers ===== */
+.header-container, .device-tile-overrides, .grid, .device-grid-container,
+.p-panel, .p-tabview-panels, .p-dialog-content, .p-toast, .p-card-body {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
@@ -55,9 +38,18 @@ table, thead, tbody, tr, th, td {
   border-color: #333 !important;
 }
 
+/* ===== Inputs ===== */
+input, select, textarea, .p-inputtext, .form-control {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #999 !important;
+}
+
 /* ===== Buttons ===== */
-.btn, .btn-primary, .btn-secondary,
-.p-button, .p-dialog-footer button {
+.btn, .btn-primary, .btn-secondary, .p-button, .p-dialog-footer button {
   background-color: #333 !important;
   color: #fff !important;
   border: 1px solid #555 !important;
@@ -66,14 +58,7 @@ table, thead, tbody, tr, th, td {
   background-color: #444 !important;
 }
 
-/* ===== Input Controls ===== */
-.p-inputtext, .form-control, input, select, textarea {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-
-/* ===== TabView ===== */
+/* ===== Breadcrumb & Tabs ===== */
 .p-tabview-nav li {
   background-color: #1c1c1c !important;
   color: #ccc !important;
@@ -81,6 +66,10 @@ table, thead, tbody, tr, th, td {
 .p-tabview-nav li.p-highlight {
   background-color: #333 !important;
   border-bottom: 2px solid #4fc3f7 !important;
+}
+nav.p-breadcrumb {
+  background-color: #1e1e1e !important;
+  color: #ccc !important;
 }
 
 /* ===== Dialogs ===== */
@@ -92,35 +81,44 @@ table, thead, tbody, tr, th, td {
   border-color: #333 !important;
 }
 
-/* ===== Toasts & Notifications ===== */
+/* ===== Toasts ===== */
 .p-toast, .alert, .notification {
   background-color: #222 !important;
-  border-color: #333 !important;
   color: #fff !important;
+  border-color: #333 !important;
 }
 
-/* ===== Utility Color Classes ===== */
+/* ===== Utility Colors ===== */
 .text-orange-600, .text-yellow-600 {
   color: #fbc02d !important;
 }
-.text-green-600 {
+.text-green-600, .text-lime-500 {
   color: #81c784 !important;
 }
 .text-red-600 {
   color: #e57373 !important;
 }
 
-/* ===== Remove Accidental Dark Overlays ===== */
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+/* ===== Misc Fixes ===== */
 .flex.justify-content-center.align-items-center {
   background: transparent !important;
   color: inherit !important;
   z-index: auto !important;
 }
 
-/* ===== Fix Hidden Elements Being Black ===== */
-[style*="background-color: white"],
-[style*="background:#fff"],
-[style*="background: white"] {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
+/* ===== Toggle Switches ===== */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #4fc3f7 !important;
 }
