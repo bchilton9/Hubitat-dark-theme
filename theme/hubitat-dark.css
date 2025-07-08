@@ -1,128 +1,94 @@
-/* Force body and base containers dark */
-body, html {
-  background-color: #121212 !important;
+/* Base background + foreground */
+body, html, .main-page-v2-wrapper, .surface-ground,
+.device-tile-overrides, .header-container, .stats-container,
+.p-toast, .p-dialog, .p-panel, .p-dropdown, .p-inputtext,
+.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1,
+.bg-hubitat-neutral-10 {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* Text links and primary highlights */
+a, .text-blue-600, .text-primary, .text-orange-600,
+.text-red-600, .text-green-600, .text-yellow-600 {
+  color: #4fc3f7 !important;
+}
+
+/* Buttons */
+.p-button, .btn, .btn-primary, .btn-secondary {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  color: #fff !important;
+}
+.p-button:hover, .btn:hover {
+  background-color: #555 !important;
+}
+
+/* Input fields and dropdowns */
+.p-inputtext, .form-control {
+  background-color: #2a2a2a !important;
+  border: 1px solid #555 !important;
+  color: #e0e0e0 !important;
+}
+.p-dropdown-label {
   color: #e0e0e0 !important;
 }
 
-table, .table, .list-group-item, .form-control, .card, .panel, .modal-content {
+/* Tab navigation */
+.p-tabview-nav li {
+  background-color: #1c1c1c !important;
+  color: #ccc !important;
+}
+.p-tabview-nav li.p-highlight {
+  background-color: #333 !important;
+  border-bottom: 2px solid #4fc3f7 !important;
+}
+.p-tabview-panels {
+  background-color: #1a1a1a !important;
+}
+
+/* Tables */
+table, thead, tbody, tr, th, td {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
 }
 
-/* Input fields */
-input, select, textarea {
-  background-color: #2a2a2a !important;
-  color: #eee !important;
-  border: 1px solid #444 !important;
-}
-
-/* Buttons */
-.btn, .btn-default, .btn-primary, .btn-danger, .btn-success {
-  background-color: #333 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-
-.btn-primary {
-  background-color: #2962ff !important;
-  border-color: #2962ff !important;
-}
-
-/* Links */
-a, a:visited {
-  color: #64b5f6 !important;
-}
-
-a:hover {
-  color: #90caf9 !important;
-}
-
-/* Dropdowns, search, filters */
-.dropdown-menu, .form-control, select {
-  background-color: #2b2b2b !important;
-  color: #f1f1f1 !important;
-}
-
-/* Scrollbars */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #1c1c1c;
+  background: #1a1a1a;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #555;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
-/* Sliders / Switches */
-input[type="range"] {
-  background-color: #444 !important;
+/* Footer */
+footer, .site-footer, #footer, .bottom-bar,
+.px-3.pt-3.pb-6, .text-center.mt-5.text-sm.text-muted {
+  background-color: #121212 !important;
+  color: #888 !important;
+  border-top: 1px solid #333 !important;
 }
 
-.switch, .toggle, .slider {
-  background-color: #444 !important;
-}
-
-/* Modal backdrop */
-.modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-/* Toasts, notifications, alerts */
-.alert {
+/* Notification icon, toggle buttons, etc. */
+p-toast, .notification, .alert {
   background-color: #222 !important;
-  color: #ddd !important;
-  border-color: #444 !important;
-}
-
-/* Header bar and breadcrumb */
-.header-container,
-.breadcrumb,
-.breadcrumb li,
-.breadcrumb a {
-  background-color: #1a1a1a !important;
-  color: #ddd !important;
-}
-
-/* Tile icons: boost contrast */
-.tile i.material-icons,
-.tile .he-*.material-icons {
-  color: #ccc !important;
-  font-size: 24px !important;
-}
-
-/* Category nav tabs */
-.p-tabview-nav li a,
-.p-tabview-nav li.p-highlight a {
   color: #eee !important;
-}
-
-/* Dashboard top stats tiles */
-.stats-container .stat-tile,
-.dashboard-stats .tile {
-  background: #1e1e1e !important;
-  color: #ddd !important;
-}
-
-/* Modals and dropdowns */
-.p-overlay-panel,
-.p-panel,
-.p-dropdown-panel,
-.p-dialog {
-  background-color: #222 !important;
   border-color: #333 !important;
-  color: #ddd !important;
 }
 
-/* Sidebar menu (rooms/devices/dashboards list) */
-.side-nav, .side-nav li a {
-  background-color: #1c1c1c !important;
-  color: #ccc !important;
+/* Device icons */
+.device-icon, .tile-icon, .icon {
+  filter: brightness(1.2) contrast(1.4);
 }
 
-/* Ensure forced reduction of white backgrounds */
-body *, body *:not(style):not(#dark-theme-style) {
+/* Prevent global inheritance override */
+body *:not(script):not(style):not(#dark-theme-style) {
   background-color: inherit !important;
+  color: inherit !important;
 }
