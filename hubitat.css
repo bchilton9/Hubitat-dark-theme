@@ -1,0 +1,35 @@
+:root {
+  --bg-color: #1e1e1e;
+  --fg-color: #e0e0e0;
+  --panel-color: #2c2c2c;
+  --accent-color: #00ffc3;
+}
+
+body, html {
+  background-color: var(--bg-color) !important;
+  color: var(--fg-color) !important;
+}
+
+div, span, td, th, input, select, textarea, button {
+  background-color: var(--panel-color) !important;
+  color: var(--fg-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+a {
+  color: var(--accent-color) !important;
+}
+
+.navbar, .header, .footer {
+  background-color: #111 !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+}
