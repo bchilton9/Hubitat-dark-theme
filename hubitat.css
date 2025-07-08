@@ -1,8 +1,11 @@
 :root {
   --bg-color: #1e1e1e;
   --fg-color: #e0e0e0;
-  --panel-color: #2c2c2c;
-  --accent-color: #00ffc3;
+  --panel-color: #2b2b2b;
+  --highlight: #00ffc3;
+  --input-bg: #333;
+  --input-border: #555;
+  --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 body, html {
@@ -10,18 +13,41 @@ body, html {
   color: var(--fg-color) !important;
 }
 
-div, span, td, th, input, select, textarea, button {
-  background-color: var(--panel-color) !important;
-  color: var(--fg-color) !important;
-  border-color: var(--accent-color) !important;
+a {
+  color: var(--highlight) !important;
 }
 
-a {
-  color: var(--accent-color) !important;
+input, select, textarea, button {
+  background-color: var(--input-bg) !important;
+  color: var(--fg-color) !important;
+  border: 1px solid var(--input-border) !important;
+  border-radius: 4px;
+  padding: 0.4em 0.6em;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--highlight) !important;
+  color: #000 !important;
+}
+
+.card, .tile, .device, .panel, .hub-card, .tile-primary, .tile-secondary {
+  background-color: var(--panel-color) !important;
+  color: var(--fg-color) !important;
+  box-shadow: var(--card-shadow) !important;
+  border-radius: 6px;
+  padding: 1em;
 }
 
 .navbar, .header, .footer {
   background-color: #111 !important;
+  color: var(--fg-color) !important;
+  border-bottom: 1px solid #444;
+}
+
+table, th, td {
+  background-color: var(--panel-color) !important;
+  color: var(--fg-color) !important;
+  border-color: var(--input-border) !important;
 }
 
 ::-webkit-scrollbar {
@@ -31,5 +57,20 @@ a {
   background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
+  background: var(--highlight);
+  border-radius: 4px;
+}
+
+/* Optional: style hub logs or terminal */
+pre {
+  background-color: #111 !important;
+  color: #0f0 !important;
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+/* Improve clickable areas */
+a, button {
+  cursor: pointer !important;
 }
