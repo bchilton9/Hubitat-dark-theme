@@ -77,3 +77,12 @@ body.theme-ready,
 html.theme-ready {
   background-color: #121212 !important;
 }
+html:not(.theme-ready) body {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+html.theme-ready body {
+  display: block !important;
+  opacity: 1 !important;
+}
