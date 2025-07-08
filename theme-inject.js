@@ -17,41 +17,37 @@
   `;
 
   function injectStyle() {
-    if (!document.getElementById('theme-inline')) {
+    if (!document.getElementById("theme-inline")) {
       const style = document.createElement("style");
       style.id = "theme-inline";
       style.textContent = css;
       document.head.appendChild(style);
-      console.log("[Theme] CSS injected");
+      console.log("[Theme] Inline CSS applied");
     }
   }
 
-  function hideSpinners() {
-    // hide typical loading containers
-    const spinners = document.querySelectorAll('[class*="loading"], [class*="spinner"], [class*="progress"]');
-    spinners.forEach(el => {
-      el.style.display = "none";
+  function waitForAppMount() {
+    const observer = new MutationObserver(() => {
+      const spinnerGone = !document.querySelector(".v-progress-circular");
+      const mainContentLoaded = document.querySelector(".v-main, .dashboard-tile");
+
+      if (spinnerGone && mainContentLoaded) {
+        injectStyle();
+        observer.disconnect();
+        console.log("[Theme] DOM mutation triggered injection");
+      }
     });
 
-    // force app visibility
-    const app = document.querySelector("#app");
-    if (app) app.style.opacity = "1";
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    setTimeout(() => {
+      injectStyle(); // fallback after timeout
+      console.warn("[Theme] Fallback applied after timeout");
+    }, 15000);
   }
 
-  function waitForVueMount(retries = 0) {
-    const mainView = document.querySelector(".v-main"); // or a specific content marker
-    if (mainView && mainView.children.length > 0) {
-      injectStyle();
-      hideSpinners();
-    } else if (retries < 40) {
-      setTimeout(() => waitForVueMount(retries + 1), 500);
-    } else {
-      console.warn("[Theme] Timed out waiting for Vue");
-    }
-  }
-
-  // Delay startup to avoid interfering with first paint
-  window.addEventListener("load", () => {
-    setTimeout(waitForVueMount, 300);
-  });
+  window.addEventListener("load", waitForAppMount);
 })();
