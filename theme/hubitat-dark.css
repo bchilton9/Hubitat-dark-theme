@@ -76,3 +76,53 @@ input[type="range"] {
   color: #ddd !important;
   border-color: #444 !important;
 }
+
+/* Header bar and breadcrumb */
+.header-container,
+.breadcrumb,
+.breadcrumb li,
+.breadcrumb a {
+  background-color: #1a1a1a !important;
+  color: #ddd !important;
+}
+
+/* Tile icons: boost contrast */
+.tile i.material-icons,
+.tile .he-*.material-icons {
+  color: #ccc !important;
+  font-size: 24px !important;
+}
+
+/* Category nav tabs */
+.p-tabview-nav li a,
+.p-tabview-nav li.p-highlight a {
+  color: #eee !important;
+}
+
+/* Dashboard top stats tiles */
+.stats-container .stat-tile,
+.dashboard-stats .tile {
+  background: #1e1e1e !important;
+  color: #ddd !important;
+}
+
+/* Modals and dropdowns */
+.p-overlay-panel,
+.p-panel,
+.p-dropdown-panel,
+.p-dialog {
+  background-color: #222 !important;
+  border-color: #333 !important;
+  color: #ddd !important;
+}
+
+/* Sidebar menu (rooms/devices/dashboards list) */
+.side-nav, .side-nav li a {
+  background-color: #1c1c1c !important;
+  color: #ccc !important;
+}
+
+/* Ensure forced reduction of white backgrounds */
+body *, body *:not(style):not(#dark-theme-style) {
+  background-color: inherit !important;
+}
