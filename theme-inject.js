@@ -17,41 +17,41 @@
   `;
 
   function injectStyle() {
-    const style = document.createElement("style");
-    style.id = "theme-inline";
-    style.textContent = css;
-    document.head.appendChild(style);
-    console.log("[Theme] Inline CSS applied");
+    if (!document.getElementById('theme-inline')) {
+      const style = document.createElement("style");
+      style.id = "theme-inline";
+      style.textContent = css;
+      document.head.appendChild(style);
+      console.log("[Theme] CSS injected");
+    }
   }
 
-  function forceReveal() {
+  function hideSpinners() {
+    // hide typical loading containers
     const spinners = document.querySelectorAll('[class*="loading"], [class*="spinner"], [class*="progress"]');
     spinners.forEach(el => {
       el.style.display = "none";
     });
 
+    // force app visibility
     const app = document.querySelector("#app");
     if (app) app.style.opacity = "1";
-
-    console.log("[Theme] Forced content reveal");
   }
 
-  function init() {
-    injectStyle();
-    forceReveal();
-  }
-
-  // Wait until app is populated
-  function waitUntilReady(attempts = 0) {
-    const app = document.querySelector("#app");
-    if (app && app.innerHTML.length > 500) {
-      init();
-    } else if (attempts < 20) {
-      setTimeout(() => waitUntilReady(attempts + 1), 500);
+  function waitForVueMount(retries = 0) {
+    const mainView = document.querySelector(".v-main"); // or a specific content marker
+    if (mainView && mainView.children.length > 0) {
+      injectStyle();
+      hideSpinners();
+    } else if (retries < 40) {
+      setTimeout(() => waitForVueMount(retries + 1), 500);
     } else {
-      console.warn("[Theme] Vue app never fully loaded");
+      console.warn("[Theme] Timed out waiting for Vue");
     }
   }
 
-  waitUntilReady();
+  // Delay startup to avoid interfering with first paint
+  window.addEventListener("load", () => {
+    setTimeout(waitForVueMount, 300);
+  });
 })();
