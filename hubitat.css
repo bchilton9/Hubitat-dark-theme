@@ -1,122 +1,79 @@
-/* === Force visibility after Vue mounts === */
-main, .mdl-layout__content, #app {
+/* Wait until theme-ready class is added */
+body:not(.theme-ready) main,
+body:not(.theme-ready) #app {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Once ready, show the app */
+body.theme-ready main,
+body.theme-ready #app,
+body.theme-ready .mdl-layout__content {
   display: block !important;
   opacity: 1 !important;
-  visibility: visible !important;
 }
 
-/* Prevent white flash on page load */
-html, body {
+/* Base background */
+body.theme-ready,
+html.theme-ready {
   background-color: #121212 !important;
   color: #eee !important;
 }
 
-/* Core background and text color for dark theme */
-body, #app, .mdl-layout, .mdl-layout__content {
-  background-color: #121212 !important;
-  color: #eee !important;
-}
-
-/* Universal fallback */
-#app * {
-  background-color: transparent !important;
-  color: inherit !important;
-}
-
-/* High-priority override for deep Vue content */
-body *:not(img):not(svg):not(path):not([style*="color:"]),
-#app *:not(img):not(svg):not(path):not([style*="color:"]) {
-  background-color: transparent !important;
-  color: #eee !important;
-}
-
-/* Buttons, text inputs, selects */
-.mdl-button,
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-textarea,
-select {
-  background-color: #1e1e1e !important;
-  color: #eee !important;
-  border-color: #333 !important;
-}
-
-/* Cards and containers */
-.mdl-card,
-.ui-widget-content,
-.mdc-card {
+/* Cards and panels */
+body.theme-ready .mdl-card,
+body.theme-ready .ui-widget-content,
+body.theme-ready .mdc-card,
+body.theme-ready .p-card,
+body.theme-ready .p-component {
   background-color: #1e1e1e !important;
   color: #eee !important;
   box-shadow: none !important;
 }
 
-/* Headers and navbars */
-.mdl-layout__header,
-.mdc-top-app-bar {
+/* Inputs and buttons */
+body.theme-ready input,
+body.theme-ready select,
+body.theme-ready textarea,
+body.theme-ready button,
+body.theme-ready .mdl-button {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+  border-color: #333 !important;
+}
+
+/* Tables */
+body.theme-ready table,
+body.theme-ready th,
+body.theme-ready td {
+  background-color: #1e1e1e !important;
+  color: #ccc !important;
+  border-color: #333 !important;
+}
+
+/* Top nav and side nav */
+body.theme-ready .mdl-layout__header,
+body.theme-ready .mdc-top-app-bar {
   background-color: #222 !important;
   color: #fff !important;
 }
 
-/* Side nav and menu */
-.mdl-navigation__link,
-.sidebar-nav,
-.sidebar {
+body.theme-ready .mdl-navigation__link,
+body.theme-ready .sidebar-nav {
   background-color: #1b1b1b !important;
   color: #ccc !important;
 }
 
-/* Tables */
-table {
-  background-color: #1e1e1e !important;
-  color: #ddd !important;
-}
-th, td {
-  border-color: #333 !important;
-}
-
-/* Spinners / loaders */
-.mdl-spinner,
-.spinner,
-.loading-spinner,
-.loading-screen,
-.loading-wrapper {
+/* Spinner */
+body.theme-ready .mdl-spinner,
+body.theme-ready .spinner,
+body.theme-ready .loading-spinner {
   border-top-color: #ccc !important;
   border-left-color: #ccc !important;
+}
+
+/* Prevent white flash */
+body.theme-ready,
+html.theme-ready {
   background-color: #121212 !important;
-  color: #eee !important;
-  opacity: 1 !important;
-}
-
-/* Quill rich text editor fix */
-.ql-toolbar,
-.ql-container {
-  background-color: #1e1e1e !important;
-  color: #eee !important;
-  border-color: #444 !important;
-}
-
-/* DataTables / dropdowns / selects */
-.SumoSelect,
-.dataTables_wrapper,
-.ui-select,
-.ui-dropdown {
-  background-color: #1e1e1e !important;
-  color: #eee !important;
-}
-
-/* PrimeVue, modal overrides */
-.p-dialog,
-.p-panel,
-.p-card,
-.p-toast {
-  background: #1e1e1e !important;
-  color: #eee !important;
-  border-color: #444 !important;
-}
-
-/* Hide cloaking if present */
-[v-cloak] {
-  display: none !important;
 }
