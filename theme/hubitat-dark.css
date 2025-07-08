@@ -175,3 +175,76 @@ button[aria-label="Grid"] {
   background-color: #333 !important;
   color: #4fc3f7 !important;
 }
+
+/* ===== Apps & Dashboards Tables ===== */
+.p-table,
+.p-table thead th,
+.p-table tbody tr,
+.p-table tbody td,
+.p-table tbody th {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+/* ===== Apps Add‑buttons & Top Bar ===== */
+button.bg-green-500,
+button.bg-green-600 {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
+button.bg-green-500:hover,
+button.bg-green-600:hover {
+  background-color: #444 !important;
+}
+
+/* ===== Breadcrumb & Header Tabs ===== */
+.breadcrumb,
+.breadcrumb a,
+.page-title,
+.p-panel .p-tabview-nav li,
+.p-panel .p-tabview-nav li span {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== Side‑menu Background ===== */
+.sidebar, .layout-sidebar, .p-sidebar {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+.sidebar a, .layout-sidebar a, .p-sidebar a,
+.sidebar .menu-item, .p-sidebar .menu-item,
+.layout-sidebar .menu-item {
+  color: #e0e0e0 !important;
+}
+
+/* ===== Side‑menu Active Item ===== */
+.sidebar .menu-item-active,
+.p-sidebar .menu-item-active,
+.layout-sidebar .menu-item-active {
+  background-color: #333 !important;
+  color: #4fc3f7 !important;
+}
+
+/* ===== Overlay/backdrop dark fix ===== */
+.p-sidebar-mask,
+.p-dialog-mask {
+  background-color: rgba(18, 18, 18, 0.8) !important;
+}
+
+/* ===== List/Grid toggle fix (specific icons) ===== */
+button[aria-label="List"] > span,
+button[aria-label="Grid"] > span {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== Icon/text inputs in top bar ===== */
+input[placeholder="Search apps…"],
+input[placeholder="Search…"] {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
