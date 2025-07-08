@@ -1,38 +1,38 @@
 (function(){
-  const url = "https://hubitat.chilsoft.com/hubitat.css";
-  const MAX = 20000, INTERVAL = 500;
-  let elapsed = 0;
+  const css = `
+    body, .v-main, .v-application--wrap {
+      background-color: #111 !important;
+      color: #ddd !important;
+    }
 
-  function applyTheme() {
-    if (document.getElementById("theme-style")) return true;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = url;
-    link.id = "theme-style";
-    document.head.appendChild(link);
-    console.log("[Theme] CSS injected");
-    return true;
+    .v-navigation-drawer, .v-toolbar {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+
+    .v-btn {
+      background-color: #333 !important;
+      color: #fff !important;
+    }
+  `;
+
+  function injectStyle() {
+    const style = document.createElement("style");
+    style.id = "theme-inline";
+    style.textContent = css;
+    document.head.appendChild(style);
+    console.log("[Theme] Inline CSS applied");
   }
 
-  function isAppReady() {
+  function isReady() {
     const app = document.getElementById("app");
     return app && app.innerHTML.length > 100;
   }
 
-  function tryInject() {
-    if (isAppReady()) {
-      applyTheme();
-    } else if (elapsed < MAX) {
-      elapsed += INTERVAL;
-      setTimeout(tryInject, INTERVAL);
-    } else {
-      console.warn("[Theme] Vue didn’t mount within timeout");
-    }
+  function waitUntilReady() {
+    if (isReady()) injectStyle();
+    else setTimeout(waitUntilReady, 500);
   }
 
-  document.addEventListener("readystatechange", () => {
-    if (document.readyState === "complete") tryInject();
-  });
-
-  tryInject();
+  waitUntilReady();
 })();
