@@ -1,75 +1,36 @@
-/* === Critical Vue Mounting Fixes === */
-#app,
-.mdl-layout__content,
-main {
+/* === Force visibility after Vue mounts === */
+main, .mdl-layout__content, #app {
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-[v-cloak] {
-  display: none !important;
-}
-
-body[style*="display: none"],
-#app[style*="display: none"] {
-  display: block !important;
-}
-
-/* === Base Dark Theme Styles === */
-body, html,
-#app,
-.mdl-layout,
-.mdl-layout__content {
-  background-color: #121212 !important;
-  color: #eee !important;
-  font-family: system-ui, sans-serif;
-}
-
-/* Prevent white flash */
+/* Prevent white flash on page load */
 html, body {
   background-color: #121212 !important;
-}
-
-/* === Cards and Panels === */
-.mdl-card,
-.ui-widget-content,
-.mdc-card {
-  background-color: #1e1e1e !important;
   color: #eee !important;
-  box-shadow: none !important;
 }
 
-/* === Headers and Navigation === */
-.mdl-layout__header,
-.mdc-top-app-bar {
-  background-color: #222 !important;
-  color: #fff !important;
+/* Core background and text color for dark theme */
+body, #app, .mdl-layout, .mdl-layout__content {
+  background-color: #121212 !important;
+  color: #eee !important;
 }
 
-.mdc-top-app-bar__title,
-.mdl-layout__header-row {
-  color: #fff !important;
+/* Universal fallback */
+#app * {
+  background-color: transparent !important;
+  color: inherit !important;
 }
 
-/* === Side Navigation === */
-.mdl-navigation__link,
-.sidebar-nav {
-  background-color: #1b1b1b !important;
-  color: #ccc !important;
+/* High-priority override for deep Vue content */
+body *:not(img):not(svg):not(path):not([style*="color:"]),
+#app *:not(img):not(svg):not(path):not([style*="color:"]) {
+  background-color: transparent !important;
+  color: #eee !important;
 }
 
-/* === Tables === */
-table {
-  background-color: #1e1e1e !important;
-  color: #ddd !important;
-}
-
-th, td {
-  border-color: #333 !important;
-}
-
-/* === Inputs, Forms, Buttons === */
+/* Buttons, text inputs, selects */
 .mdl-button,
 input[type="text"],
 input[type="number"],
@@ -82,44 +43,80 @@ select {
   border-color: #333 !important;
 }
 
-/* Fix PrimeVue dropdowns */
-.mdc-select,
-.p-dropdown,
-.ui-selectonemenu {
+/* Cards and containers */
+.mdl-card,
+.ui-widget-content,
+.mdc-card {
   background-color: #1e1e1e !important;
   color: #eee !important;
+  box-shadow: none !important;
 }
 
-/* === Dialogs and Modals === */
-.mdl-dialog,
-.mdc-dialog__surface {
-  background-color: #1c1c1c !important;
-  color: #eee !important;
+/* Headers and navbars */
+.mdl-layout__header,
+.mdc-top-app-bar {
+  background-color: #222 !important;
+  color: #fff !important;
 }
 
-/* === DataTables Fix === */
-.dataTables_wrapper input[type="search"],
-.dataTables_wrapper select {
+/* Side nav and menu */
+.mdl-navigation__link,
+.sidebar-nav,
+.sidebar {
+  background-color: #1b1b1b !important;
+  color: #ccc !important;
+}
+
+/* Tables */
+table {
   background-color: #1e1e1e !important;
-  color: #eee !important;
+  color: #ddd !important;
+}
+th, td {
+  border-color: #333 !important;
 }
 
-/* === Spinner Fix === */
+/* Spinners / loaders */
 .mdl-spinner,
 .spinner,
-.loading-spinner {
+.loading-spinner,
+.loading-screen,
+.loading-wrapper {
   border-top-color: #ccc !important;
   border-left-color: #ccc !important;
+  background-color: #121212 !important;
+  color: #eee !important;
+  opacity: 1 !important;
 }
 
-/* === Link Styling === */
-a {
-  color: #4da6ff !important;
+/* Quill rich text editor fix */
+.ql-toolbar,
+.ql-container {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+  border-color: #444 !important;
 }
 
-/* === Optional: Button Hover === */
-button:hover,
-.mdl-button:hover {
-  background-color: #2a2a2a !important;
-  color: #fff !important;
+/* DataTables / dropdowns / selects */
+.SumoSelect,
+.dataTables_wrapper,
+.ui-select,
+.ui-dropdown {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+}
+
+/* PrimeVue, modal overrides */
+.p-dialog,
+.p-panel,
+.p-card,
+.p-toast {
+  background: #1e1e1e !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+/* Hide cloaking if present */
+[v-cloak] {
+  display: none !important;
 }
