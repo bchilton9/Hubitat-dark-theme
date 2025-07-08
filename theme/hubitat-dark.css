@@ -1,34 +1,62 @@
-/* ===== Base ===== */
+/* ===== Base Reset ===== */
+* {
+  background-color: transparent !important;
+  border-color: #333 !important;
+  color: #e0e0e0 !important;
+  box-shadow: none !important;
+}
 html, body {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-/* ===== Links & Text Colors ===== */
+/* ===== Links ===== */
 a, .text-blue-600, .text-primary {
   color: #4fc3f7 !important;
 }
-.text-black, .text-gray-900, .text-gray-700,
-.text-neutral-800, .text-neutral-900 {
+a:hover {
+  color: #81d4fa !important;
+}
+
+/* ===== Light Text Override ===== */
+.text-black, .text-gray-900, .text-gray-800,
+.text-gray-700, .text-gray-600 {
   color: #e0e0e0 !important;
 }
 
-/* ===== Background Overrides ===== */
-.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1, .bg-hubitat-neutral-10,
-.ui-bg-white, .surface-ground, .hover\:bg-hubitat-neutral-15:hover,
-.main-page-v2-wrapper, .card, .p-card, .p-panel, .p-dialog,
-div[style*="background: white"], div[style*="background-color: white"],
-div[style*="background:#fff"], div[style*="background-color:#fff"] {
+/* ===== Light Background Override ===== */
+.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1,
+.bg-hubitat-neutral-10, .surface-ground, .ui-bg-white,
+.main-page-v2-wrapper, .p-card, .p-panel, .p-tabview-panels,
+.p-toast, .p-dropdown-panel, .p-dialog-content {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
-/* ===== Containers ===== */
-.header-container, .device-tile-overrides, .grid, .device-grid-container,
-.p-panel, .p-tabview-panels, .p-dialog-content, .p-toast, .p-card-body {
+/* ===== Header, Sidebar, Menus ===== */
+nav, header, .header-container, .topbar, .p-menubar,
+.sidebar, .side-nav, .main-nav {
+  background-color: #1a1a1a !important;
+  color: #f0f0f0 !important;
+}
+
+/* ===== Panels and Cards ===== */
+.p-card, .p-panel, .card, .panel, .tile, .grid,
+.device-grid-container, .device-tile-overrides {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
+}
+
+/* ===== Buttons ===== */
+button, .btn, .btn-primary, .btn-secondary,
+.p-button, .p-dialog-footer button {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+button:hover, .btn:hover, .p-button:hover {
+  background-color: #444 !important;
 }
 
 /* ===== Tables ===== */
@@ -39,26 +67,14 @@ table, thead, tbody, tr, th, td {
 }
 
 /* ===== Inputs ===== */
-input, select, textarea, .p-inputtext, .form-control {
+input, select, textarea, .form-control,
+.p-inputtext, .p-dropdown, .p-autocomplete-input {
   background-color: #2a2a2a !important;
   color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-input::placeholder, textarea::placeholder {
-  color: #999 !important;
-}
-
-/* ===== Buttons ===== */
-.btn, .btn-primary, .btn-secondary, .p-button, .p-dialog-footer button {
-  background-color: #333 !important;
-  color: #fff !important;
   border: 1px solid #555 !important;
 }
-.btn:hover, .p-button:hover {
-  background-color: #444 !important;
-}
 
-/* ===== Breadcrumb & Tabs ===== */
+/* ===== Tabs ===== */
 .p-tabview-nav li {
   background-color: #1c1c1c !important;
   color: #ccc !important;
@@ -67,39 +83,31 @@ input::placeholder, textarea::placeholder {
   background-color: #333 !important;
   border-bottom: 2px solid #4fc3f7 !important;
 }
-nav.p-breadcrumb {
-  background-color: #1e1e1e !important;
-  color: #ccc !important;
-}
 
 /* ===== Dialogs ===== */
-.p-dialog .p-dialog-header,
-.p-dialog .p-dialog-content,
-.p-dialog .p-dialog-footer {
+.p-dialog, .p-dialog-header, .p-dialog-content, .p-dialog-footer {
   background-color: #1a1a1a !important;
   color: #ddd !important;
   border-color: #333 !important;
 }
 
-/* ===== Toasts ===== */
+/* ===== Switches, Sliders, Toggles ===== */
+.p-togglebutton, .p-slider, .p-checkbox, .p-inputswitch {
+  background-color: #2a2a2a !important;
+  border-color: #555 !important;
+}
+.p-inputswitch.p-inputswitch-checked {
+  background-color: #4fc3f7 !important;
+}
+
+/* ===== Toasts and Alerts ===== */
 .p-toast, .alert, .notification {
   background-color: #222 !important;
   color: #fff !important;
-  border-color: #333 !important;
+  border: 1px solid #444 !important;
 }
 
-/* ===== Utility Colors ===== */
-.text-orange-600, .text-yellow-600 {
-  color: #fbc02d !important;
-}
-.text-green-600, .text-lime-500 {
-  color: #81c784 !important;
-}
-.text-red-600 {
-  color: #e57373 !important;
-}
-
-/* ===== Scrollbar ===== */
+/* ===== Scrollbars ===== */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -111,14 +119,38 @@ nav.p-breadcrumb {
   border-radius: 10px;
 }
 
-/* ===== Misc Fixes ===== */
+/* ===== Utility Colors ===== */
+.text-orange-600, .text-yellow-600 {
+  color: #fbc02d !important;
+}
+.text-green-600 {
+  color: #81c784 !important;
+}
+.text-red-600 {
+  color: #e57373 !important;
+}
+.text-blue-600 {
+  color: #4fc3f7 !important;
+}
+
+/* ===== Fix Icons & Overlays ===== */
+svg, .p-icon, i, .material-icons {
+  fill: #e0e0e0 !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== Handle Forced Inline Styles ===== */
+[style*="background-color: white"],
+[style*="background:#fff"],
+[style*="background: white"],
+[style*="background-color:#fff"] {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== Remove Accidental Black Overlays ===== */
 .flex.justify-content-center.align-items-center {
   background: transparent !important;
   color: inherit !important;
   z-index: auto !important;
-}
-
-/* ===== Toggle Switches ===== */
-input[type="checkbox"], input[type="radio"] {
-  accent-color: #4fc3f7 !important;
 }
