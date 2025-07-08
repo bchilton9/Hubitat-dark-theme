@@ -42,7 +42,17 @@ a, .text-blue-600, .text-primary {
 .p-toast,
 .p-inputtext,
 .p-dropdown,
-.p-button {
+.p-button,
+.card,
+.dashboard-card,
+.bg-white.shadow.rounded-md,
+.card-header,
+.card-body,
+.card-footer,
+div:has(> h1),
+[data-v-1e7bc439=""].flex.flex-row.gap-2.flex-wrap,
+.flex.flex-col.gap-2,
+.bg-white.rounded-md.shadow {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
@@ -53,6 +63,10 @@ table, thead, tbody, tr, th, td {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
   border-color: #333 !important;
+}
+thead, .table thead th {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
 }
 
 /* ===== Buttons ===== */
@@ -89,6 +103,12 @@ input::placeholder {
   background-color: #333 !important;
   border-bottom: 2px solid #4fc3f7 !important;
 }
+.p-tabview-nav-container,
+.p-tabview-nav {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
 
 /* ===== Dialogs ===== */
 .p-dialog .p-dialog-header,
@@ -105,6 +125,9 @@ input::placeholder {
   border-color: #333 !important;
   color: #fff !important;
 }
+.p-toast {
+  border-top: none !important;
+}
 
 /* ===== Utility Color Classes ===== */
 .text-orange-600, .text-yellow-600 {
@@ -115,6 +138,17 @@ input::placeholder {
 }
 .text-red-600 {
   color: #e57373 !important;
+}
+
+/* ===== List/Grid Button Fixes ===== */
+span.flex-1,
+button[data-mode-switch],
+button[data-layout],
+button[aria-label="List"],
+button[aria-label="Grid"] {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
 }
 
 /* ===== Remove Accidental Dark Overlays ===== */
@@ -132,34 +166,11 @@ input::placeholder {
   color: #e0e0e0 !important;
 }
 
-/* ===== TOP STATUS BOX FIX ===== */
-[data-v-1e7bc439=""].flex.flex-row.gap-2.flex-wrap {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* ===== LIST MODE BUTTON FIX ===== */
-span.flex-1,
-button[data-mode-switch],
-button[data-layout] {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #555 !important;
-}
-
-/* ===== TOAST LINE FIX ===== */
-.p-toast {
-  background-color: #1e1e1e !important;
-  border-top: none !important;
-}
-
-/* ===== DROPDOWN MENU BG FIX ===== */
+/* ===== Dropdown Panel Fix ===== */
 .p-dropdown-panel {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
-
-/* ===== SELECTED DROPDOWN OPTION FIX ===== */
 .p-highlight {
   background-color: #333 !important;
   color: #4fc3f7 !important;
