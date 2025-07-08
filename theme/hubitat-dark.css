@@ -1,126 +1,128 @@
-/* ===== Global Base ===== */
+/* Global background and text adjustments */
 body, html {
-  background-color: #121212 !important;
-  color: #e0e0e0 !important;
-}
-a, .text-blue-600, .text-primary {
-  color: #4fc3f7 !important;
-}
-.text-black, .text-gray-900, .text-gray-700 {
-  color: #e0e0e0 !important;
-}
-.bg-white, .bg-gray-100, .bg-hubitat-light-gray-1, .bg-hubitat-neutral-10,
-.ui-bg-white, .surface-ground, .hover\:bg-hubitat-neutral-15:hover,
-.main-page-v2-wrapper {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
+  background-color: #111 !important;
+  color: #eee !important;
 }
 
-/* ===== Scrollbars ===== */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #1e1e1e;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 10px;
-}
-
-/* ===== Panels, Cards, Containers ===== */
-.header-container,
-.device-tile-overrides,
-.stats-container,
-.grid,
-.device-grid-container,
-.p-panel,
-.p-card,
-.p-dropdown-panel,
-.p-tabview-panels,
-.p-dialog-content,
-.p-toast,
-.p-inputtext,
-.p-dropdown,
-.p-button {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
+/* Main container overrides */
+.main-content,
+.container,
+.card,
+.mat-card,
+.mat-drawer-container {
+  background-color: #1a1a1a !important;
+  color: #eee !important;
+  border-color: #444 !important;
 }
 
-/* ===== Tables ===== */
-table, thead, tbody, tr, th, td {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
+/* Button styling */
+button,
+.mat-button,
+.mat-raised-button,
+.mat-flat-button {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #444 !important;
 }
 
-/* ===== Buttons ===== */
-.btn, .btn-primary, .btn-secondary,
-.p-button, .p-dialog-footer button {
+button:hover,
+.mat-button:hover {
   background-color: #333 !important;
-  color: #fff !important;
-  border: 1px solid #555 !important;
 }
-.btn:hover, .p-button:hover {
+
+/* Toggle switches, icons */
+.mat-slide-toggle-bar {
   background-color: #444 !important;
 }
+.mat-slide-toggle-thumb {
+  background-color: #ccc !important;
+}
 
-/* ===== Input Controls ===== */
-.p-inputtext, .form-control, input, select, textarea {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
+/* Input fields */
+input,
+textarea,
+.mat-input-element,
+.mat-form-field-infix {
+  background-color: #222 !important;
+  color: #fff !important;
   border-color: #555 !important;
 }
 
-/* ===== TabView ===== */
-.p-tabview-nav li {
-  background-color: #1c1c1c !important;
-  color: #ccc !important;
-}
-.p-tabview-nav li.p-highlight {
-  background-color: #333 !important;
-  border-bottom: 2px solid #4fc3f7 !important;
-}
-
-/* ===== Dialogs ===== */
-.p-dialog .p-dialog-header,
-.p-dialog .p-dialog-content,
-.p-dialog .p-dialog-footer {
+/* Breadcrumbs, nav, and toolbar */
+.mat-toolbar,
+.breadcrumb,
+.breadcrumb-item,
+.mat-toolbar-row {
   background-color: #1a1a1a !important;
   color: #ddd !important;
-  border-color: #333 !important;
+  border-bottom: 1px solid #333 !important;
 }
 
-/* ===== Toasts & Notifications ===== */
-.p-toast, .alert, .notification {
+/* Card and tile containers */
+.card, .mat-card, .tile, .device-tile {
   background-color: #222 !important;
-  border-color: #333 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Action icons, toggle switches */
+.mat-icon,
+.icon-button,
+.fa,
+i.material-icons {
+  color: #ccc !important;
+}
+
+/* Table headers and cells */
+table, th, td {
+  background-color: #111 !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+/* Dropdowns and select menus */
+.mat-select-panel,
+select,
+option {
+  background-color: #222 !important;
   color: #fff !important;
 }
 
-/* ===== Utility Color Classes ===== */
-.text-orange-600, .text-yellow-600 {
-  color: #fbc02d !important;
-}
-.text-green-600 {
-  color: #81c784 !important;
-}
-.text-red-600 {
-  color: #e57373 !important;
+/* Highlighting selection or primary items */
+.mat-primary,
+.mat-focus-indicator,
+a,
+a:visited {
+  color: #4da6ff !important;
 }
 
-/* ===== Remove Accidental Dark Overlays ===== */
-.flex.justify-content-center.align-items-center {
-  background: transparent !important;
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+
+/* Fix icons and visibility for moon toggle */
+.theme-toggle {
+  background: none !important;
+  border: none !important;
+  filter: brightness(1.2);
+}
+
+.theme-toggle svg,
+.theme-toggle img {
+  filter: invert(100%);
+}
+
+/* Force all elements to use dark overrides */
+* {
+  background-color: transparent !important;
   color: inherit !important;
-  z-index: auto !important;
-}
-
-/* ===== Fix Hidden Elements Being Black ===== */
-[style*="background-color: white"],
-[style*="background:#fff"],
-[style*="background: white"] {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
+  box-shadow: none !important;
 }
