@@ -4,12 +4,16 @@ A custom dark mode CSS theme for Hubitat’s admin interface, designed to overri
 
 It’s not perfect yet but it works. 
 
+___
+
 ## Features
 
 - Full dark mode override for all built-in pages
 - Improved contrast and readability
 - Mobile-friendly layout adjustments
 - Theme-safe scrollbars, buttons, inputs, tables, tabs, dropdowns, etc.
+
+___
 
 ## Installation Options
 
@@ -48,6 +52,8 @@ Then paste in the full contents of `hubitat-dark.css`.
 
 You can attempt injecting this stylesheet via custom code in dashboards, but it won’t apply to the full admin interface. Use only if you need dark mode **in dashboards only**.
 
+___
+
 ## Hosting the CSS
 
 You can host `hubitat-dark.css` on:
@@ -61,6 +67,7 @@ Example GitHub Pages link:
 ```
 https://yourgithubusername.github.io/hubitat-dark/hubitat-dark.css
 ```
+___
 
 ## Tips
 
@@ -68,18 +75,26 @@ https://yourgithubusername.github.io/hubitat-dark/hubitat-dark.css
 - Set your browser to request dark mode (`prefers-color-scheme: dark`) to match auto-dark themes
 - Ensure your reverse proxy supports `sub_filter` or equivalent (some need modules enabled)
 
+___
+
 ## Screenshots
 
-![Dashboard](./screenshots/dashboard.png)
-![Settings](./screenshots/settings.png)
+![Menu](./images/IMG_4425.jpeg)
+![Devices](./images/IMG_4424.jpeg)
+
+___
 
 ## 📜 License
 
 MIT – free to use and modify. Not affiliated with Hubitat.
 
+___
+
 ## 🛠 Made By
 
 [ChilSoft.com](https://chilsoft.com) with caffeine and questionable commits.
+
+___
 
 ## ⚠️ Disclaimer
 
