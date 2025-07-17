@@ -1,108 +1,138 @@
 # Hubitat Dark Theme
 
-A custom dark mode CSS theme for Hubitat’s admin interface, designed to override the default light UI. This stylesheet improves readability, adds consistent theming, removes white flash elements, and is mobile-friendly. Great for use with reverse proxy setups like Nginx Proxy Manager (NPM), Caddy, or manually via browser extensions.
+A custom dark mode **JavaScript-injected theme** for Hubitat’s admin interface. This method overrides the default light UI without modifying Hubitat itself. Ideal for use with **reverse proxies** like Nginx Proxy Manager (NPM), Caddy, or Traefik — or manually via browser extensions.
 
-It’s not perfect yet but it works. 
+> ✅ No need to modify Hubitat firmware or dashboards  
+> ✅ Automatically injects and applies a full dark mode stylesheet
 
-___
+---
 
 ## Features
 
-- Full dark mode override for all built-in pages
-- Improved contrast and readability
-- Mobile-friendly layout adjustments
-- Theme-safe scrollbars, buttons, inputs, tables, tabs, dropdowns, etc.
+- Seamless dark mode for all core pages
+- Improved contrast, readability, and touch support
+- Fully mobile-friendly (tested on iOS Safari + Android)
+- Themed scrollbars, buttons, inputs, tables, tabs, dropdowns, modals, etc.
+- Works even after reboots or firmware updates (when used with a proxy)
 
-___
+---
 
 ## Installation Options
 
-### 🔁 Option 1: **Reverse Proxy CSS Injection (Recommended)**
+### 🔁 Option 1: **Reverse Proxy JavaScript Injection (Recommended)**
 
-This is the most seamless way to apply the dark mode without touching Hubitat files.
+This is the most powerful and persistent way to apply the dark theme.
 
 #### ✅ Requirements
-- A reverse proxy like **Nginx Proxy Manager**, **Caddy**, or **Traefik**
-- An externally hosted `.css` file (e.g. GitHub Pages, custom web server)
+- A reverse proxy like **Nginx Proxy Manager (NPM)**, **Caddy**, or **Traefik**
+- A public `.js` file that injects the dark theme CSS
 
 #### ✅ Example for **Nginx Proxy Manager**
 
-1. **Host your dark CSS file** somewhere public (e.g., `https://yoursite.com/hubitat-dark.css`).
-2. Go to your Hubitat proxy config in NPM.
-3. Add this to the **Custom Nginx Configuration**:
+1. Host your JavaScript injector file somewhere public, e.g.:
+
+```
+https://yourdomain.com/hubitat/theme-inject.js
+```
+
+2. Add this to your **Custom Nginx Configuration** in NPM:
 
 ```nginx
-sub_filter ‘</head>’ ‘<link rel=“stylesheet” href=“https://yoursite.com/hubitat-dark.css”></head>’;
-sub_filter_once on;
+sub_filter '</body>' '<script src="https://yourdomain.com/hubitat/theme-inject.js"></script></body>';
+sub_filter_once off;
+sub_filter_types text/html;
+proxy_set_header Accept-Encoding "";
 ```
 
-> This injects the CSS before the page loads by modifying HTML in real-time.
+> This injects the JavaScript file at the bottom of every Hubitat page.
 
-### 🧩 Option 2: **Browser Extension (Temporary / Per User)**
+3. The JS file dynamically adds the dark theme CSS to `<head>` when the page loads.
 
-Use browser extensions like:
+---
 
-- **Stylus** (Chrome/Firefox)
+### 🧩 Option 2: **Browser Extension Injection**
+
+For testing or personal use without a reverse proxy.
+
+Use extensions like:
+
+- **Stylus** (inject JS via `@document`)
+- **Tampermonkey / Violentmonkey**
 - **User JavaScript and CSS**
-- **Tampermonkey** (with custom script to inject CSS)
 
-Then paste in the full contents of `hubitat-dark.css`.
+Paste in this injection code or link to the hosted JS file.
 
-### 🧪 Option 3: **Hubitat Custom Dashboard Code Injection** (limited)
+---
 
-You can attempt injecting this stylesheet via custom code in dashboards, but it won’t apply to the full admin interface. Use only if you need dark mode **in dashboards only**.
+## Hosting the Script
 
-___
+You can host the injector JS file (`theme-inject.js`) on:
 
-## Hosting the CSS
+- **GitHub Pages**
+- **Your own web server**
+- **Cloudflare Pages, R2, jsDelivr**, etc.
 
-You can host `hubitat-dark.css` on:
-
-- GitHub Pages (public repo)
-- Your own server
-- A file host that supports raw links (e.g., `cdn.jsdelivr.net`, Cloudflare R2, etc.)
-
-Example GitHub Pages link:
+Example GitHub Pages URL:
 
 ```
-https://yourgithubusername.github.io/hubitat-dark/hubitat-dark.css
+https://yourgithubusername.github.io/hubitat-dark/theme-inject.js
 ```
-___
 
-## Tips
+---
 
-- Works great on mobile (tested on iOS Safari and Android Chrome)
-- Set your browser to request dark mode (`prefers-color-scheme: dark`) to match auto-dark themes
-- Ensure your reverse proxy supports `sub_filter` or equivalent (some need modules enabled)
+## What Should Be In `theme-inject.js`
 
-___
+Example content for the injector file:
+
+```js
+// hubitat/theme-inject.js
+(function () {
+  const cssUrl = 'https://yourdomain.com/hubitat/hubitat-dark.css';
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = cssUrl;
+  document.head.appendChild(link);
+})();
+```
+
+> Be sure to replace the CSS URL with your actual hosted theme path.
+
+---
 
 ## Screenshots
 
-![Menu](./images/IMG_4425.jpeg)
+📸 *These screenshots show the theme applied via JS injection through a reverse proxy.*
+
+![Menu](./images/IMG_4425.jpeg)  
 ![Devices](./images/IMG_4424.jpeg)
 
-___
+---
+
+## Tips & Compatibility
+
+- ✅ Works across all Hubitat pages, including devices, apps, logs, etc.
+- ✅ Works on mobile (iOS/Android)
+- 🌓 Compatible with `prefers-color-scheme: dark` if extended later
+- ⚠️ `sub_filter` must be enabled in NPM or your proxy config
+
+---
 
 ## 📜 License
 
-MIT – free to use and modify. Not affiliated with Hubitat.
+**MIT** – Free to use, share, or modify.  
+Not affiliated with Hubitat Elevation.
 
-___
+---
 
 ## 🛠 Made By
 
-[ChilSoft.com](https://chilsoft.com) with caffeine and questionable commits.
+[ChilSoft.com](https://chilsoft.com) — fueled by caffeine and irrational CSS decisions.
 
-___
+---
 
 ## ⚠️ Disclaimer
 
-This site and its contents are provided for informational and educational purposes only.
+This site and theme are provided “as-is” for educational and informational purposes only.  
+Use at your own risk. We are **not responsible** for device issues, bricked hubs, lost Z-Wave networks, etc.
 
-Use any code, tools, or instructions at your own risk.  
-We are **not responsible** for any damage to your device, data loss, or unintended consequences.
-
-Always proceed with care — and make backups.
-
-© **2025 ChilSoft**. All rights reserved.
+© 2025 **ChilSoft**. All rights reserved.
