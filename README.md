@@ -1,3 +1,8 @@
+![License](https://img.shields.io/github/license/bchilton9/wings-cert-copy-from-npm)
+![Last Commit](https://img.shields.io/github/last-commit/bchilton9/wings-cert-copy-from-npm)
+![JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-f7df1e?logo=javascript&logoColor=black)
+![Styled with CSS](https://img.shields.io/badge/Styled%20with-CSS-264de4?logo=css3&logoColor=white)
+
 # Hubitat Dark Theme
 
 A custom dark mode **JavaScript-injected theme** for Hubitat’s admin interface. This method overrides the default light UI without modifying Hubitat itself. Ideal for use with **reverse proxies** like Nginx Proxy Manager (NPM), Caddy, or Traefik — or manually via browser extensions.
