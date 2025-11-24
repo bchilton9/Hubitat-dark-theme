@@ -3,6 +3,12 @@
 ![JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-f7df1e?logo=javascript&logoColor=black)
 ![Styled with CSS](https://img.shields.io/badge/Styled%20with-CSS-264de4?logo=css3&logoColor=white)
 
+# I am archiving this project because I no longer have a Hubitat to test with. Mine died and I am now just running everything through the alexa hub.
+
+
+—
+
+
 # Hubitat Dark Theme
 
 A custom dark mode **JavaScript-injected theme** for Hubitat’s admin interface. This method overrides the default light UI without modifying Hubitat itself. Ideal for use with **reverse proxies** like Nginx Proxy Manager (NPM), Caddy, or Traefik — or manually via browser extensions.
